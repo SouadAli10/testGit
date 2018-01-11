@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Layla and the three wolves</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="beginStory">
+        <p>story...........</p>
+        <p>Choose one of these roads</p>
+        road left
+        <input type="radio" name="raods" value="left" id="left">
+        road middle
+        <input type="radio" name="raods" value="middle" id="middle">
+        road right
+        <input type="radio" name="raods" value="right" id="right">
+        <button id="go">Go</button>
+    </div>
+    <button id="retry">Continue</button>
+    <script>
+        // get the HTML element that has an id of "beginStory"
+        var begining = document.getElementById("beginStory");
+        // get the button element that has an id of "go"
+        var button1 = document.getElementById("go");
+        // get the button element that has an id of "retry"
+        var retryButton = document.getElementById("retry").style.display = "none";
+        // Defining a function
+        var changeScene1toScene2 = function(){
+            //what happens if layla choose right way
+            if(document.getElementById('right').checked){
+                begining.innerHTML = "<h1>Layla fall to her death</h1>" + "<h1>try again!</h1>";
+            }
+            //what happens if layla choose left way
+            else if(document.getElementById('left').checked){
+                document.getElementById("retry").style.display  = "block";
+                begining.innerHTML = "<h1>Layla is poisend by a snake</h1>"+
+                 "<p>story........</p>"+
+                 "<p> Choose one of the following roads: </p>"+
+                 "right way"+
+                 "<input type='radio' name='twoWay' value='rightWay' id='rightWay'>"+
+                 "left way"+
+                 "<input type='radio' name='twoWay' value='leftWay' id='leftWay'>";
+                 //adding listener to button continue(retry)
+                 document.getElementById("retry").addEventListener("click",continueInTheLeftSide);
+            }
+            //what happens if layla choose middle way
+            else if(document.getElementById('middle').checked){
+                document.getElementById("retry").style.display  = "block";
+                begining.innerHTML =
+                 "<p>story........</p>"+
+                 "<p> Choose one of the following roads: </p>"+
+                 "sand way"+
+                 "<input type='radio' name='twoWay' value='sandWay' id='sandWay'>"+
+                 "mud way"+
+                 "<input type='radio' name='twoWay' value='mudWay' id='mudWay'>"+
+                 "clean way"+
+                 "<input type='radio' name='twoWay' value='cleanWay' id='cleanWay'>";
+                 //adding listener to button continue(retry)
+                 document.getElementById("retry").addEventListener("click",continueInTheMiddle);
+            }
+            
+        }
+        // function that happens when a user choose the middle way and give him 3 ways
+        var continueInTheMiddle= function () {
+            if(document.getElementById('sandWay').checked){
+                    begining.innerHTML = "<h1>Layla found her grandma</h1>"+
+                    "<h2>Good Job You Won!</h2>"; 
+                    document.getElementById("retry").style.display = "none"; 
+                 }
+                 else if(document.getElementById('mudWay').checked){
+                    begining.innerHTML = "<h1>Layla is sinking in mud</h1>"+
+                    "<h2>Try Again!</h2>";
+                    document.getElementById("retry").style.display = "none";
+                 }
+                 else if(document.getElementById('cleanWay').checked){
+                    begining.innerHTML = "<h1>Layla is eaten by a wolf</h1>"+
+                    "<h2>Try Again!</h2>";
+                    document.getElementById("retry").style.display = "none";
+                 }
+
+
+                 
+        }
+        // function that happens when a user choose the left way and give him 2 ways
+        var continueInTheLeftSide = function () {
+            if(document.getElementById('rightWay').checked){
+                    begining.innerHTML = "<h1>Layla found the cure and relaxed on a tree</h1>"+
+                    "<h2>Good Job You Won!</h2>"; 
+                    document.getElementById("retry").style.display = "none"; 
+                 }
+                 else if(document.getElementById('leftWay').checked){
+                    begining.innerHTML = "<h1>Layla found a cave where the bear kill her</h1>"+
+                    "<h2>Try Again!</h2>";
+                    document.getElementById("retry").style.display = "none";
+                 }
+        }
+
+        //add event listener to button go to take us to the scene 2
+        button1.addEventListener("click",changeScene1toScene2);
+
+       
+        
+        // var returnToScene1 = function(){
+
+        //     begining.innerHTML = 
+        // "<p>story...........</p>"+
+        // "<p>Choose one of these roads</p>"+
+        // "road left"+
+        // "<input type='radio' name='raods' value='left'>"+
+        // "road middle"+
+        // "<input type='radio' name='raods' value='middle'>"+
+        // "road right"+
+        // "<input type='radio' name='raods' value='right'>"+
+        // "<button id='go'>Go</button>";
+        // document.getElementById("retry").style.display = "none";
+        // }
+       
+        // document.getElementById("retry").addEventListener("click",returnToScene1);
+        
+
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+#beginStory{
+    /* background-color: red; */
+    width: 80%;
+    margin-left: 7%;
+    text-align: center;
+    padding: 3%;
+    font-family: arial;
+    font-size: 24px;
+    /* background-image: url("../images/ahmad.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 400px; */
+    color: black;
+}
+body{
+    background-image: url("../images/3 roads.jpeg");
+    background-repeat: no-repeat;
+     background-size: 100%; 
+    width: 100%;
+}
+/* .radio::before{
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;;
+    background-color: white;
+    
+} */
+
+.radio-option{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    position: relative;
+    top: 13.33333px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 40px;
+    width: 40px;
+    transition: all 0.15s ease-out 0s;
+    background: #cbd1d8;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 20px;
+}
+.radio-option:hover {
+    background: #9faab7;
+  }
+  .radio-option:checked {
+    background: #40e0d0;
+  }
+  .radio-option:checked::after {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    content: '✔';
+    display: inline-block;
+    font-size: 26.66667px;
+    text-align: center;
+    line-height: 40px;
+  }
+
+  .buttonStyle::before{
+      content: '';
+      display: inline-block;
+      
+  }
+  .buttonStyle{
+      cursor: pointer;
+      width: 300px;
+      height: 50px;
+      position: relative;
+      top: 20px;
+      background-color: green;
+      border-radius: 20px;
+      transition: all 0.15s ease-out 0s;
+      
+  }
+
+  .buttonStyle:hover{
+      background-color: #22dd33;
+  }
+  .retryButton{
+      position: relative;
+      left: 40%;
+  }

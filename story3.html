@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Layla and the three wolves</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="beginStory">
+        
+    </div>
+    <button class="buttonStyle centerButton" id="go">Go</button> 
+    <!-- <button class="buttonStyle retryButton" id="retry">Continue</button> -->
+    <script>
+        // get the HTML element that has an id of "beginStory"
+        var begining = document.getElementById("beginStory");
+        // get the button element that has an id of "go"
+        var button1 = document.getElementById("go");
+        // get the button element that has an id of "retry"
+        // var retryButton = document.getElementById("retry").style.display = "none";
+
+        var beginTheStory = function(){
+            begining.innerHTML = " <p>Once Upon a time. There was a girl called Layla who was searching for her grandmother. She came across many roads </p>"+
+        "<p>Choose one of these roads</p>"+
+        "road left"+
+        "<input class='radio-option' type='radio' name='raods' value='left' id='left'>"+
+        "road middle"+
+        "<input class='radio-option' type='radio' name='raods' value='middle' id='middle'>"+
+        "road right"+
+        "<input class='radio-option' type='radio' name='raods' value='right' id='right'>"+
+        "<br>"+
+        "<br>"
+        }
+
+        
+
+        var checkRadio = function(name){
+            return document.getElementById(name) && document.getElementById(name).checked;
+        }
+3
+        // Defining a function
+        var storyManager = function(){
+            //what happens if layla choose right way
+            if(checkRadio('right')){
+                 begining.innerHTML = "<h1>Layla fall to her death</h1>" + 
+                 "<h1>try again!</h1>"+
+                 "<label><input class='radio-option' type='radio' id='reset' name='choices'>reset the game</label>";
+            }
+            //what happens if layla choose left way
+            else if(checkRadio('left')){
+                leftChoice()
+            }
+            //what happens if layla choose middle way
+            else if(checkRadio('middle')){
+                middleChoice()
+            }
+            else if(checkRadio('sandWay')){
+                    SandChoice()
+                     
+                 }
+            else if(checkRadio('mudWay')){
+                    MudChoice()
+                   
+                 }
+            else if(checkRadio('cleanWay')){
+                   CleanChoice()
+            }
+            else if(checkRadio('rightWay')){
+                   RightWay() 
+                 }
+            else if(checkRadio('leftWay')){
+                    LeftWay()
+                 }
+            else if(checkRadio('reset')){
+                beginTheStory()
+            }
+        }
+        var leftChoice = function () {
+                
+                begining.innerHTML = "<h1>Layla is poisend by a snake</h1>"+
+                 "<p>story........</p>"+
+                 "<p> Choose one of the following roads: </p>"+
+                 "right way"+
+                 "<input class='radio-option' type='radio' name='twoWay' value='rightWay' id='rightWay'>"+
+                 "left way"+
+                 "<input class='radio-option' type='radio' name='twoWay' value='leftWay' id='leftWay'>";
+                 
+        }
+
+        var middleChoice = function(){
+           
+                begining.innerHTML =
+                 "<p>story........</p>"+
+                 "<p> Choose one of the following roads: </p>"+
+                 "sand way"+
+                 "<input class='radio-option' type='radio' name='twoWay' value='sandWay' id='sandWay'>"+
+                 "mud way"+
+                 "<input class='radio-option' type='radio' name='twoWay' value='mudWay' id='mudWay'>"+
+                 "clean way"+
+                 "<input class='radio-option' type='radio' name='twoWay' value='cleanWay' id='cleanWay'>";
+                 
+        }
+
+        // function that happens when a user choose the middle way and give him 3 ways
+        var SandChoice= function () {
+                    begining.innerHTML = "<h1>Layla found her grandma</h1>"+
+                    "<h2>Good Job You Won!</h2>"+
+                    "<label><input class='radio-option' type='radio' id='reset' name='choices'>reset the game</label>";
+
+                   
+        }
+
+        var MudChoice = function(){
+                    begining.innerHTML = "<h1>Layla is sinking in mud</h1>"+
+                    "<h2>Try Again!</h2>"+
+                    "<label><input class='radio-option' type='radio' id='reset' name='choices'>reset the game</label>";
+                    
+        }
+                 
+        var CleanChoice = function(){
+                    begining.innerHTML = "<h1>Layla is eaten by a wolf</h1>"+
+                    "<h2>Try Again!</h2>"+
+                    "<label><input class='radio-option' type='radio' id='reset' name='choices'>reset the game</label>";
+                   
+        }
+        // function that happens when a user choose the left way and give him 2 ways
+        var RightWay= function () {
+                    begining.innerHTML = "<h1>Layla found the cure and relaxed on a tree</h1>"+
+                    "<h2>Good Job You Won!</h2>"+
+                    "<label><input class='radio-option' type='radio' id='reset' name='choices'>reset the game</label>";
+                    
+        }
+        var LeftWay= function(){
+                    begining.innerHTML = "<h1>Layla found a cave where the bear kill her</h1>"+
+                    "<h2>Try Again!</h2>"+
+                    "<label><input class='radio-option' type='radio' id='reset' name='choices'>reset the game</label>";
+                   
+        }
+
+     
+
+        //add event listener to button go to take us to the scene 2
+        // button1.addEventListener("click",changeScene1toScene2);
+
+       
+        
+        // var returnToScene1 = function(){
+
+        //     begining.innerHTML = 
+        // "<p>story...........</p>"+
+        // "<p>Choose one of these roads</p>"+
+        // "road left"+
+        // "<input type='radio' name='raods' value='left'>"+
+        // "road middle"+
+        // "<input type='radio' name='raods' value='middle'>"+
+        // "road right"+
+        // "<input type='radio' name='raods' value='right'>"+
+        // "<button id='go'>Go</button>";
+        // document.getElementById("retry").style.display = "none";
+        // }
+        // document.getElementById("retry").addEventListener("click",returnToScene1);
+       
+        button1.addEventListener("click",storyManager);
+        beginTheStory();
+
+        
+        
+        
+    </script>
+</body>
+</html>
